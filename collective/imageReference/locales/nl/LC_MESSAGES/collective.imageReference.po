@@ -1,0 +1,1302 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: collective.imageReference\n"
+"POT-Creation-Date: 2015-04-09 15:28+0000\n"
+"PO-Revision-Date: 2015-04-10 15:29+0000’\n"
+"Last-Translator: INTK <info@intk.com>\n"
+"Language-Team: Dutch <info@intk.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"Language-Code: nl\n"
+"Language-Name: Dutch\n"
+"Preferred-Encodings: utf-8\n"
+"Domain: collective.imageReference\n"
+
+#: ../profiles/default/types/Object.xml:7
+msgid "Object"
+msgstr "Objecten"
+
+#: ../profiles/default/types/Object.xml:8
+msgid "Information about an object typically collected by museums"
+msgstr "Informatie over een object meestal verzameld door musea"
+
+#: ../imageReference.py
+msgid "Body"
+msgstr "Tekst"
+
+#: ../imageReference.py
+msgid "Description"
+msgstr "Beschrijving"
+
+#: ../imageReference.py
+msgid "Identification"
+msgstr "Identificatie"
+
+#: ../imageReference.py
+msgid "Institution name"
+msgstr "Instellingnaam"
+
+#: ../imageReference.py
+msgid "Administrative name"
+msgstr "Afdeling"
+
+#: ../imageReference.py
+msgid "Collection"
+msgstr "Collectie"
+
+#: ../imageReference.py
+msgid "Object number"
+msgstr "Objectnummer"
+
+#: ../imageReference.py
+msgid "Rec. type"
+msgstr "Rec. type"
+
+#: ../imageReference.py
+msgid "Part"
+msgstr "Onderdeel"
+
+#: ../imageReference.py
+msgid "Tot. Number"
+msgstr "Aantal"
+
+#: ../imageReference.py
+msgid "Copy number"
+msgstr "Serienummer"
+
+#: ../imageReference.py
+msgid "Edition"
+msgstr "Oplage"
+
+#: ../imageReference.py
+msgid "Distinguish features"
+msgstr "Ondersch. kenmerken"
+
+#: ../imageReference.py
+msgid "Object Category"
+msgstr "Objectcategorie"
+
+#: ../imageReference.py
+msgid "Object name"
+msgstr "Objectnaam"
+
+#: ../imageReference.py
+msgid "Other name"
+msgstr "Ander benaming"
+
+#: ../imageReference.py
+msgid "Physical Characteristics"
+msgstr "Fysieke kenmerken"
+
+#: ../imageReference.py
+msgid "Physical Description"
+msgstr "Fysieke beschrijving"
+
+#: ../imageReference.py
+msgid "Keywords"
+msgstr "Trefwoorden"
+
+#: ../imageReference.py
+msgid "Part"
+msgstr "Onderdeel"
+
+#: ../imageReference.py
+msgid "Aspect"
+msgstr "Aspect"
+
+#: ../imageReference.py
+msgid "Keyword"
+msgstr "Trefwoord"
+
+#: ../imageReference.py
+msgid "Notes"
+msgstr "Bijzonderheden"
+
+#: ../imageReference.py
+msgid "Techniques"
+msgstr "Technieken"
+
+#: ../imageReference.py
+msgid "Technique"
+msgstr "Techniek"
+
+#: ../imageReference.py
+msgid "Materials"
+msgstr "Materialen"
+
+#: ../imageReference.py
+msgid "Material"
+msgstr "Materiaal"
+
+#: ../imageReference.py
+msgid "Dimensions"
+msgstr "Afmetingen"
+
+#: ../imageReference.py
+msgid "Dimention"
+msgstr "Afmeting"
+
+#: ../imageReference.py
+msgid "Value"
+msgstr "Waarde"
+
+#: ../imageReference.py
+msgid "Unit"
+msgstr "Eenh"
+
+#: ../imageReference.py
+msgid "Precision"
+msgstr "Precisie"
+
+#: ../imageReference.py
+msgid "Dimensions (free text)"
+msgstr "Afmeting (vrije tekst)"
+
+#: ../imageReference.py
+msgid "Frame"
+msgstr "Omlijsting"
+
+#: ../imageReference.py
+msgid "Detail"
+msgstr "Bijzonderheden"
+
+#: ../imageReference.py
+msgid "Production & Dating"
+msgstr "Vervaardiging & Datering"
+
+#: ../imageReference.py
+msgid "Creator"
+msgstr "Vervaardiger"
+
+#: ../imageReference.py
+msgid "Maker"
+msgstr "Vervaardiger"
+
+#: ../imageReference.py
+msgid "Qualifier"
+msgstr "Kwalificatie"
+
+#: ../imageReference.py
+msgid "Role"
+msgstr "Rol"
+
+#: ../imageReference.py
+msgid "Place"
+msgstr "Plaats"
+
+#: ../imageReference.py
+msgid "School / style"
+msgstr "School / stijl"
+
+#: ../imageReference.py
+msgid "Production notes"
+msgstr "Bijzonderheden"
+
+#: ../imageReference.py
+msgid "Production reason"
+msgstr "Reden vervaardiging"
+
+#: ../imageReference.py
+msgid "Dating"
+msgstr "Datering"
+
+#: ../imageReference.py
+msgid "Period"
+msgstr "Periode"
+
+#: ../imageReference.py
+msgid "Date (early)"
+msgstr "Datering van"
+
+#: ../imageReference.py
+msgid "Precision"
+msgstr "Precisie"
+
+#: ../imageReference.py
+msgid "Date (late)"
+msgstr "Tot"
+
+#
+# Condition & Conservation
+#
+
+#: ../imageReference.py
+msgid "Condition & Conservation"
+msgstr "Toestand & Conservering"
+
+#: ../imageReference.py
+msgid "Conservation treatment"
+msgstr "Conserveringsprioriteit"
+
+#: ../imageReference.py
+msgid "Priority"
+msgstr "Prioriteit"
+
+#: ../imageReference.py
+msgid "Next condition check"
+msgstr "Volgende toets en controle"
+
+#: ../imageReference.py
+msgid "Date"
+msgstr "Datum"
+
+#: ../imageReference.py
+msgid "Completeness"
+msgstr "Compleetheid"
+
+#: ../imageReference.py
+msgid "Checked by"
+msgstr "Controleur"
+
+#: ../imageReference.py
+msgid "Condition"
+msgstr "Toestand"
+
+#: ../imageReference.py
+msgid "Condition"
+msgstr "Toestand"
+
+#: ../imageReference.py
+msgid "Enviromental condition"
+msgstr "Bewaarvorm"
+
+#: ../imageReference.py
+msgid "Preservation form"
+msgstr "Bewaarvorm"
+
+#: ../imageReference.py
+msgid "Conservation request"
+msgstr "Conserveringverzoeken"
+
+#: ../imageReference.py
+msgid "Treatment"
+msgstr "Behandeling"
+
+#: ../imageReference.py
+msgid "Requester"
+msgstr "Aanvrager"
+
+#: ../imageReference.py
+msgid "Reason"
+msgstr "Reden"
+
+#: ../imageReference.py
+msgid "Status"
+msgstr "Status"
+
+#: ../imageReference.py
+msgid "low"
+msgstr "laag"
+
+#: ../imageReference.py
+msgid "medium"
+msgstr "normal"
+
+#: ../imageReference.py
+msgid "high"
+msgstr "hoog"
+
+#: ../imageReference.py
+msgid "urgent"
+msgstr "urgent"
+
+#
+# Inscriptions and markings
+#
+
+#: ../imageReference.py
+msgid "Inscriptions and markings"
+msgstr "Opschrijven en merken"
+
+#: ../imageReference.py
+msgid "Type"
+msgstr "Soort"
+
+#: ../imageReference.py
+msgid "Position"
+msgstr "Positie"
+
+#: ../imageReference.py
+msgid "Method"
+msgstr "Methode"
+
+#: ../imageReference.py
+msgid "Date"
+msgstr "Datum"
+
+#: ../imageReference.py
+msgid "Role"
+msgstr "Rol"
+
+#: ../imageReference.py
+msgid "Content"
+msgstr "Inhoud"
+
+#: ../imageReference.py
+msgid "Description"
+msgstr "Beschrijving"
+
+#: ../imageReference.py
+msgid "Interpretation"
+msgstr "Interpretatie"
+
+#: ../imageReference.py
+msgid "Language"
+msgstr "Taal"
+
+#: ../imageReference.py
+msgid "Notes"
+msgstr "Bijzonderheden"
+
+#
+# Value & Insurance
+#
+
+#: ../imageReference.py
+msgid "Value & Insurance"
+msgstr "Waarde"
+
+#: ../imageReference.py
+msgid "Valuation"
+msgstr "Waardebepaling"
+
+#: ../imageReference.py
+msgid "Value"
+msgstr "Waarde"
+
+#: ../imageReference.py
+msgid "Curr."
+msgstr "Val."
+
+#: ../imageReference.py
+msgid "Valuer"
+msgstr "Taxateur"
+
+#: ../imageReference.py
+msgid "Insurance"
+msgstr "Verzekering"
+
+#: ../imageReference.py
+msgid "Commercial"
+msgstr "commercieel"
+
+#: ../imageReference.py
+msgid "Indemnity"
+msgstr "indemniteit"
+
+#: ../imageReference.py
+msgid "Policy number"
+msgstr "Polisnummer"
+
+#: ../imageReference.py
+msgid "Insurance company"
+msgstr "Verzekeringsmaatschappij"
+
+#: ../imageReference.py
+msgid "Confirmation date"
+msgstr "Bevestigingsdatum"
+
+#: ../imageReference.py
+msgid "Renewal date"
+msgstr "Verloopdatum"
+
+#: ../imageReference.py
+msgid "Reference"
+msgstr "Referentie"
+
+#: ../imageReference.py
+msgid "Conditions"
+msgstr "Voorwaarden"
+
+#
+# Acquisition
+#
+
+#: ../imageReference.py
+msgid "Acquisition"
+msgstr "Verwerving"
+
+#: ../imageReference.py
+msgid "Accession"
+msgstr "Inschrijving"
+
+#: ../imageReference.py
+msgid "Accession date"
+msgstr "Inschrijvingsdatum"
+
+#: ../imageReference.py
+msgid "Acquisition"
+msgstr "Verwerving"
+
+#: ../imageReference.py
+msgid "Acquisition number"
+msgstr "Verwervingsnummer"
+
+#: ../imageReference.py
+msgid "Acquisition number"
+msgstr "Verwervingsnummer"
+
+#: ../imageReference.py
+msgid "Method"
+msgstr "Methode"
+
+#: ../imageReference.py
+msgid "Rec.no."
+msgstr "Rec.nr."
+
+#: ../imageReference.py
+msgid "Lot no."
+msgstr "Lotnr."
+
+#: ../imageReference.py
+msgid "From"
+msgstr "Van"
+
+#: ../imageReference.py
+msgid "Auction"
+msgstr "Veiling"
+
+#: ../imageReference.py
+msgid "Place"
+msgstr "Plaats"
+
+#: ../imageReference.py
+msgid "Reason"
+msgstr "Reden"
+
+#: ../imageReference.py
+msgid "Conditions"
+msgstr "Voorwaarden"
+
+#: ../imageReference.py
+msgid "Authorization"
+msgstr "Autorisatie"
+
+#: ../imageReference.py
+msgid "Authorizer"
+msgstr "Autorisator"
+
+#: ../imageReference.py
+msgid "Costs"
+msgstr "Kosten"
+
+#: ../imageReference.py
+msgid "Offer price"
+msgstr "Vraagprijs"
+
+#: ../imageReference.py
+msgid "Curr."
+msgstr "Valuta"
+
+#: ../imageReference.py
+msgid "Purchase price"
+msgstr "Aankoopprijs"
+
+#: ../imageReference.py
+msgid "Funding"
+msgstr "Financiering"
+
+#: ../imageReference.py
+msgid "Amount"
+msgstr "Bedrag"
+
+#: ../imageReference.py
+msgid "Source"
+msgstr "Bron"
+
+#: ../imageReference.py
+msgid "Provisos"
+msgstr "Bepalingen"
+
+#: ../imageReference.py
+msgid "Documentation"
+msgstr "Documentatie"
+
+#: ../imageReference.py
+msgid "Reference"
+msgstr "Referentie"
+
+#
+# Disposal
+#
+
+#: ../imageReference.py
+msgid "Disposal"
+msgstr "Afstoting"
+
+#: ../imageReference.py
+msgid "Deaccession"
+msgstr "Uitschrijving"
+
+#: ../imageReference.py
+msgid "Deaccession date"
+msgstr "Uitschrijvingsdatum"
+
+#: ../imageReference.py
+msgid "New object number"
+msgstr "Nieuw objectnummer"
+
+#: ../imageReference.py
+msgid "Disposal"
+msgstr "Afstoting"
+
+#: ../imageReference.py
+msgid "Disposal number"
+msgstr "Afstotingsnummer"
+
+#: ../imageReference.py
+msgid "Proposed recipient"
+msgstr "Aspirant-ontvanger"
+
+#: ../imageReference.py
+msgid "Recipient"
+msgstr "Ontvanger"
+
+#: ../imageReference.py
+msgid "Reason"
+msgstr "Reden"
+
+#: ../imageReference.py
+msgid "Provisos"
+msgstr "Voorwaarden"
+
+#: ../imageReference.py
+msgid "Finance"
+msgstr "Financiën"
+
+#: ../imageReference.py
+msgid "Disposal price"
+msgstr "Verkoopprijs"
+
+#
+# Ownership history
+#
+
+#: ../imageReference.py
+msgid "Ownership history"
+msgstr "Eigendomsgeschiedenis"
+
+#: ../imageReference.py
+msgid "Ownership"
+msgstr "Eigendom"
+
+#: ../imageReference.py
+msgid "Current Owner"
+msgstr "Huidige eigenaar"
+
+#: ../imageReference.py
+msgid "History"
+msgstr "Geschiedenis"
+
+#: ../imageReference.py
+msgid "Owner"
+msgstr "Eigenaar"
+
+#: ../imageReference.py
+msgid "From"
+msgstr "Vanaf"
+
+#: ../imageReference.py
+msgid "Until"
+msgstr "Tot"
+
+#: ../imageReference.py
+msgid "Exchange method"
+msgstr "Verwervingsmethode"
+
+#: ../imageReference.py
+msgid "Acquired from"
+msgstr "Verworven van"
+
+#: ../imageReference.py
+msgid "Auction"
+msgstr "Veiling"
+
+#: ../imageReference.py
+msgid "Price"
+msgstr "Prijs"
+
+#: ../imageReference.py
+msgid "Ownership category"
+msgstr "Eigendomscategorie"
+
+#: ../imageReference.py
+msgid "Access"
+msgstr "Toegankelijkheid"
+
+#
+# Location
+#
+
+#: ../imageReference.py
+msgid "Location"
+msgstr "Standplaats"
+
+#: ../imageReference.py
+msgid "Normal location"
+msgstr "Vaste standplaats"
+
+#: ../imageReference.py
+msgid "Current location"
+msgstr "Huidige locatie"
+
+#: ../imageReference.py
+msgid "Start date"
+msgstr "Begindatum"
+
+#: ../imageReference.py
+msgid "End date"
+msgstr "Einddatum"
+
+#: ../imageReference.py
+msgid "Location type"
+msgstr "Soort standplaats"
+
+#: ../imageReference.py
+msgid "Location"
+msgstr "Standplaats"
+
+#: ../imageReference.py
+msgid "Fitness"
+msgstr "Geschiktheid"
+
+#: ../imageReference.py
+msgid "Location checks"
+msgstr "Standplaatscontroles"
+
+#
+# Notes
+#
+
+#: ../imageReference.py
+msgid "Free Fields"
+msgstr "Vrij Velden"
+
+#: ../imageReference.py
+msgid "Confidential"
+msgstr "Vertrouwelijk"
+
+#
+# Labels
+#
+
+#: ../imageReference.py
+msgid "Labels"
+msgstr "Etiketten"
+
+# Identification
+
+#: ../imageReference.py
+msgid "Translated title"
+msgstr "Vertaalde titel"
+
+#: ../imageReference.py
+msgid "Describer"
+msgstr "Beschrijver"
+
+#: ../imageReference.py
+msgid "Taxonomy"
+msgstr "Taxonomie"
+
+#: ../imageReference.py
+msgid "Taxonomy rank"
+msgstr "Taxonomie rang"
+
+#: ../imageReference.py
+msgid "Scient. name"
+msgstr "Wet. naam"
+
+#: ../imageReference.py
+msgid "Common name"
+msgstr "Populaire naam"
+
+#: ../imageReference.py
+msgid "Determiner"
+msgstr "Determinator"
+
+#: ../imageReference.py
+msgid "Object status"
+msgstr "Objectstatus"
+
+#: ../imageReference.py
+msgid "Title and description"
+msgstr "Titel en beschrijving"
+
+
+#: ../imageReference.py
+msgid "Title and description"
+msgstr "Titel en beschrijving"
+
+#
+# Iconography
+#
+
+#: ../imageReference.py
+msgid "General theme"
+msgstr "Hoofdmotief algemeen"
+
+#: ../imageReference.py
+msgid "Specific theme"
+msgstr "Hoofdmotief specifiek"
+
+#: ../imageReference.py
+msgid "Classification theme"
+msgstr "Classificatieschema"
+
+#: ../imageReference.py
+msgid "Code"
+msgstr "Code"
+
+#: ../imageReference.py
+msgid "General search criteria"
+msgstr "Algemene onderwerpsontsluiting"
+
+#: ../imageReference.py
+msgid "Content description"
+msgstr "Inhoudsbeschrijving"
+
+#: ../imageReference.py
+msgid "Content person/institution"
+msgstr "Afgebeelde persoon/instelling"
+
+#: ../imageReference.py
+msgid "Name type"
+msgstr "Soort naam"
+
+#: ../imageReference.py
+msgid "Content subject"
+msgstr "Afgebeeld onderwerp"
+
+#: ../imageReference.py
+msgid "Subject type"
+msgstr "Soort onderwerp"
+
+#: ../imageReference.py
+msgid "Subject"
+msgstr "Naam"
+
+#: ../imageReference.py
+msgid "Taxonomic rank"
+msgstr "Taxonomische rang"
+
+#: ../imageReference.py
+msgid "Scientific name"
+msgstr "Wet. Naam"
+
+#: ../imageReference.py
+msgid "Proper name"
+msgstr "Eigennaam"
+
+#: ../imageReference.py
+msgid "Identifier"
+msgstr "Identifier"
+
+#: ../imageReference.py
+msgid "Content period/date"
+msgstr "Content period/date"
+
+#: ../imageReference.py
+msgid "Iconography source"
+msgstr "Iconografisch bron"
+
+#: ../imageReference.py
+msgid "Source general"
+msgstr "Bron algemeen"
+
+#: ../imageReference.py
+msgid "Source specific"
+msgstr "Bron specifiek"
+
+#: ../imageReference.py
+msgid "Source object number"
+msgstr "Bron objectnummer"
+
+#: ../imageReference.py
+msgid "Iconography"
+msgstr "Iconografie"
+
+#: ../imageReference.py
+msgid "Content period/date"
+msgstr "Afgebeelde periode/datum"
+
+#
+# Inscriptions
+#
+
+#: ../imageReference.py
+msgid "Script"
+msgstr "Schrijt"
+
+#: ../imageReference.py
+msgid "Transliteration"
+msgstr "Transliteratie"
+
+
+#
+# Associations
+#
+
+#: ../imageReference.py
+msgid "Associated person/institution"
+msgstr "Geassocieerde persoon/instelling"
+
+#: ../imageReference.py
+msgid "Association"
+msgstr "Associatie"
+
+#: ../imageReference.py
+msgid "Associated subject"
+msgstr "Geassocieerd onderwerp"
+
+#: ../imageReference.py
+msgid "Associated period"
+msgstr "Geassocieerde periode"
+
+#: ../imageReference.py
+msgid "Associations"
+msgstr "Associaties"
+
+#
+# Numbers/relationships
+#
+
+#: ../imageReference.py
+msgid "Numbers/relationships"
+msgstr "Nummers/relaties"
+
+#: ../imageReference.py
+msgid "Numbers"
+msgstr "Nummers"
+
+#: ../imageReference.py
+msgid "Institution"
+msgstr "Instelling"
+
+#: ../imageReference.py
+msgid "Number"
+msgstr "Nummer"
+
+#: ../imageReference.py
+msgid "Relationships with other objects"
+msgstr "Relaties met andere objecten"
+
+#: ../imageReference.py
+msgid "Part of"
+msgstr "Is deel van"
+
+#: ../imageReference.py
+msgid "Parts"
+msgstr "Heeft als deel"
+
+#: ../imageReference.py
+msgid "Related object"
+msgstr "Gerelateerd object"
+
+#: ../imageReference.py
+msgid "Digital references"
+msgstr "Digitale referenties"
+
+#: ../imageReference.py
+msgid "Title"
+msgstr "Titel"
+
+#: ../imageReference.py
+msgid "Page mark"
+msgstr "Pagina-aanduiding"
+
+#: ../imageReference.py
+msgid "Author"
+msgstr "Auteur"
+
+#: ../imageReference.py
+msgid "Shelf mark"
+msgstr "Signatuur"
+
+#
+# Documentation (free) / archive
+#
+
+#: ../imageReference.py
+msgid "Documentation (free) / archive"
+msgstr "Documentatie (vrij) / archief"
+
+#: ../imageReference.py
+msgid "Documentation (free text)"
+msgstr "Documentatie (vrij tekst)"
+
+#: ../imageReference.py
+msgid "Archive"
+msgstr "Archief"
+
+#: ../imageReference.py
+msgid "Archive number"
+msgstr "Archiefnummer"
+
+
+#
+# Reproductions
+#
+
+#: ../imageReference.py
+msgid "Reproductions"
+msgstr "Reproducties"
+
+#: ../imageReference.py
+msgid "Reproduction"
+msgstr "Reproductie"
+
+#: ../imageReference.py
+msgid "Reference"
+msgstr "Referentie"
+
+#: ../imageReference.py
+msgid "Format"
+msgstr "Formaat"
+
+#: ../imageReference.py
+msgid "Identifier (URL)"
+msgstr "Identifier (URL)"
+
+#
+# Recommendations/requirements
+#
+
+#: ../imageReference.py
+msgid "Recommendations/requirements"
+msgstr "Aanbevelingen / vereisten"
+
+#: ../imageReference.py
+msgid "Recommendations"
+msgstr "Aanbevelingen"
+
+#: ../imageReference.py
+msgid "Display"
+msgstr "Tentoonstelling"
+
+#: ../imageReference.py
+msgid "Enviroment"
+msgstr "Omgeving"
+
+#: ../imageReference.py
+msgid "Handling"
+msgstr "Behandeling"
+
+#: ../imageReference.py
+msgid "Packing"
+msgstr "Verpakking"
+
+#: ../imageReference.py
+msgid "Security"
+msgstr "Veiligheid"
+
+#: ../imageReference.py
+msgid "Security"
+msgstr "Veiligheid"
+
+#: ../imageReference.py
+msgid "Storage"
+msgstr "Berging"
+
+#: ../imageReference.py
+msgid "Legal / license requirements"
+msgstr "Wettelijke eisen / vergunningen"
+
+#: ../imageReference.py
+msgid "Requirements"
+msgstr "Eisen"
+
+#: ../imageReference.py
+msgid "Requirements held"
+msgstr "Vereisten in Bezit"
+
+#: ../imageReference.py
+msgid "Current From"
+msgstr "Geldig van"
+
+#
+# Field collection
+#
+
+#: ../imageReference.py
+msgid "Field Collection"
+msgstr "Vondstomstandigheden"
+
+#: ../imageReference.py
+msgid "Field coll. number"
+msgstr "Vondstnummer"
+
+#: ../imageReference.py
+msgid "Collector"
+msgstr "Vinder"
+
+#: ../imageReference.py
+msgid "Event"
+msgstr "Gebeurtenis"
+
+#: ../imageReference.py
+msgid "Date (early)"
+msgstr "Begindatum"
+
+
+#: ../imageReference.py
+msgid "Date (late)"
+msgstr "Einddatum"
+
+#: ../imageReference.py
+msgid "Method"
+msgstr "Methode"
+
+#: ../imageReference.py
+msgid "Place"
+msgstr "Vindplaats"
+
+#: ../imageReference.py
+msgid "Place code"
+msgstr "Code vindplaats"
+
+#: ../imageReference.py
+msgid "Place feature"
+msgstr "Kenmerk vindplaats"
+
+#: ../imageReference.py
+msgid "Co-ordinates field collection place"
+msgstr "Coördnaten vindplaats"
+
+#: ../imageReference.py
+msgid "Grid type"
+msgstr "Coördinatenstelsel"
+
+#: ../imageReference.py
+msgid "X co-ordinate"
+msgstr "X-coördnaat"
+
+#: ../imageReference.py
+msgid "Addition"
+msgstr "Toevoeging"
+
+#: ../imageReference.py
+msgid "Y co-ordinate"
+msgstr "Y-coördnaat"
+
+#: ../imageReference.py
+msgid "Habitat and stratigraphy"
+msgstr "Milieu en stratigrafie"
+
+#: ../imageReference.py
+msgid "Habitat"
+msgstr "Landschap/milieu"
+
+#: ../imageReference.py
+msgid "Stratigraphy"
+msgstr "Stratigrafie"
+
+#: ../imageReference.py
+msgid "Strat. type"
+msgstr "Soort strat."
+
+#
+# imageReferences
+#
+
+#: ../imageReference.py
+msgid "imageReferences"
+msgstr "Tentoonstellingen"
+
+#: ../imageReference.py
+msgid "Exhibition"
+msgstr "Tentoonstelling"
+
+
+#: ../imageReference.py
+msgid "imageReference name"
+msgstr "Tentoonstellingsnaam"
+
+#: ../imageReference.py
+msgid "to"
+msgstr "t/m"
+
+#: ../imageReference.py
+msgid "Venue"
+msgstr "Locatie"
+
+#: ../imageReference.py
+msgid "Cat. no. object"
+msgstr "Cat.nr. object"
+
+#
+# Loans
+#
+
+#: ../imageReference.py
+msgid "Loans"
+msgstr "Bruiklenen"
+
+#: ../imageReference.py
+msgid "Incoming loans"
+msgstr "Inkomende bruiklenen"
+
+#: ../imageReference.py
+msgid "Outgoing loans"
+msgstr "Uitgaande bruiklenen"
+
+#: ../imageReference.py
+msgid "Loan number"
+msgstr "Bruikleennummer"
+
+#: ../imageReference.py
+msgid "Lender"
+msgstr "Bruikleengever"
+
+#: ../imageReference.py
+msgid "Requester"
+msgstr "Aanvrager"
+
+#: ../imageReference.py
+msgid "Request reason"
+msgstr "Reden aanvraag"
+
+#: ../imageReference.py
+msgid "Request period"
+msgstr "Aaanvraagperiode"
+
+#: ../imageReference.py
+msgid "Contract period"
+msgstr "Contractperiode"
+
+#: ../imageReference.py
+msgid "Contact"
+msgstr "Contactpersoon"
+
+#
+# imageReferences details
+#
+
+#: ../imageReference.py
+msgid "Exhibition"
+msgstr "Tentoonstelling"
+
+#: ../imageReference.py
+msgid "Alt. Title"
+msgstr "Alt. Titel"
+
+#: ../imageReference.py
+msgid "Organizing institutions"
+msgstr "Organiserende instelling"
+
+#: ../imageReference.py
+msgid "Name"
+msgstr "Naam"
+
+#: ../imageReference.py
+msgid "Address"
+msgstr "Adres"
+
+#: ../imageReference.py
+msgid "Country"
+msgstr "Land"
+
+#: ../imageReference.py
+msgid "Telephone"
+msgstr "Telefoon"
+
+#: ../imageReference.py
+msgid "imageReferences details"
+msgstr "Tentoonstelling"
+
+
+#: ../imageReference.py
+msgid "label_event_start"
+msgstr "Aanvang"
+
+#: ../imageReference.py
+msgid "label_event_end"
+msgstr "Einde"
+
+#: ../imageReference.py
+msgid "Article"
+msgstr "Lidword"
+
+#: ../imageReference.py
+msgid "Linked Objects"
+msgstr "Gekoppelde objecten"
+
+#: ../imageReference.py
+msgid "Itinerary"
+msgstr "Agenda"
+
+#: ../imageReference.py
+msgid "Postcode code"
+msgstr "Agenda"
+
+#: ../imageReference.py
+msgid "label_place"
+msgstr "Plaats"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
