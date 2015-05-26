@@ -1235,7 +1235,9 @@ msgid "label_place"
 msgstr "Plaats"
 
 
-
+#: ../imageReference.py
+msgid "Image reference"
+msgstr "Beelddocumentatie"
 
 
 
