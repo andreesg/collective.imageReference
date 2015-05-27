@@ -2,4 +2,91 @@
   
 <div metal:define-macro="test">
 
+	<tal:reproduction_data tal:condition='python: fieldset_text == "reproduction_data"'
+    tal:define='widgets group/widgets'>
+    	<div class="row no-padding">
+    		<h2 class="page-header" i18n:translate="">Identification</h2>
+
+    		<div class="form-horizontal">
+    			<tal:widget tal:replace="structure widgets/IImageReference.reproductionData_identification_reproductionReference/@@ploneform-render-widget"/>
+    			<tal:widget tal:replace="structure widgets/IImageReference.reproductionData_identification_format/@@ploneform-render-widget"/>
+    			<tal:widget tal:replace="structure widgets/IImageReference.reproductionData_identification_reproductionType/@@ploneform-render-widget"/>
+    			<tal:widget tal:replace="structure widgets/IImageReference.reproductionData_identification_copies/@@ploneform-render-widget"/>
+    			<tal:widget tal:replace="structure widgets/IImageReference.reproductionData_identification_technique/@@ploneform-render-widget"/>
+    			<tal:widget tal:replace="structure widgets/IImageReference.reproductionData_identification_location/@@ploneform-render-widget"/>
+    			<tal:widget tal:replace="structure widgets/IImageReference.reproductionData_identification_date/@@ploneform-render-widget"/>
+    			<tal:widget tal:replace="structure widgets/IImageReference.reproductionData_identification_identifierURL/@@ploneform-render-widget"/>
+    		</div>
+			
+			<h2 class="page-header" i18n:translate="">Descriptive elements of the reproduction</h2>
+
+			<div class="form-horizontal">
+    			<tal:widget tal:replace="structure widgets/IImageReference.reproductionData_descriptiveElements_title/@@ploneform-render-widget"/>
+    			<tal:widget tal:replace="structure widgets/IImageReference.reproductionData_descriptiveElements_creator/@@ploneform-render-widget"/>
+    			<tal:widget tal:replace="structure widgets/IImageReference.reproductionData_descriptiveElements_subject/@@ploneform-render-widget"/>
+    			<tal:widget tal:replace="structure widgets/IImageReference.reproductionData_descriptiveElements_description/@@ploneform-render-widget"/>
+    			<tal:widget tal:replace="structure widgets/IImageReference.reproductionData_descriptiveElements_publisher/@@ploneform-render-widget"/>
+    			<tal:widget tal:replace="structure widgets/IImageReference.reproductionData_descriptiveElements_contributor/@@ploneform-render-widget"/>
+    			<tal:widget tal:replace="structure widgets/IImageReference.reproductionData_descriptiveElements_source/@@ploneform-render-widget"/>
+    			<tal:widget tal:replace="structure widgets/IImageReference.reproductionData_descriptiveElements_coverage/@@ploneform-render-widget"/>
+    			<tal:widget tal:replace="structure widgets/IImageReference.reproductionData_descriptiveElements_rights/@@ploneform-render-widget"/>
+    			<tal:widget tal:replace="structure widgets/IImageReference.reproductionData_descriptiveElements_notes/@@ploneform-render-widget"/>
+    		</div>
+
+    	</div>
+
+	</tal:reproduction_data>
+
+	<tal:documentation tal:condition='python: fieldset_text == "documentation"'
+    tal:define='widgets group/widgets'>
+    <!-- Documentation -->
+    <div class="row no-padding">
+        <h2 class="page-header" i18n:translate="">Documentation</h2>
+
+        <div class="form-horizontal gridfield">
+          <tal:widget tal:replace="structure widgets/IImageReference.documentation_documentation/@@ploneform-render-widget"/>
+        </div>
+    </div>
+  </tal:documentation>
+
+  <tal:linked_objects tal:condition='python: fieldset_text == "linked_objects"'
+    tal:define='widgets group/widgets'>
+    <!-- Linked Objects -->
+    <div class="row no-padding">
+        <h2 class="page-header" i18n:translate="">Linked Objects</h2>
+        <div class="form-horizontal gridfield table-responsive">
+          <tal:widget tal:replace="structure widgets/IImageReference.linkedObjects_linkedObjects/@@ploneform-render-widget"/>
+        </div>
+
+        <!--<h2 class="page-header" i18n:translate="">Linked Objects</h2>
+        <div class="form-horizontal gridfield table-responsive">
+          <tal:widget tal:replace="structure widgets/linkedObjects_linkedObjects/@@ploneform-render-widget"/>
+        </div>-->
+    </div>
+  </tal:linked_objects>
+
+  <tal:management_details tal:condition='python: fieldset_text == "management_details"'
+    tal:define='widgets group/widgets'>
+    <!-- Linked Objects -->
+    <div class="row no-padding">
+        <h2 class="page-header" i18n:translate="">Input</h2>
+        <div class="form-horizontal gridfield table-responsive">
+          <tal:widget tal:replace="structure widgets/IImageReference.managementDetails_input/@@ploneform-render-widget"/>
+        </div>
+
+        <h2 class="page-header" i18n:translate="">Edit</h2>
+        <div class="form-horizontal gridfield table-responsive">
+          <tal:widget tal:replace="structure widgets/IImageReference.managementDetails_edit/@@ploneform-render-widget"/>
+        </div>
+    </div>
+  </tal:management_details>
+
+  <tal:defaults tal:condition='python: fieldset_text not in ["documentation", "reproduction_data", "linked_objects", "management_details"]'>
+
+  	<tal:block define="view nocall:group">
+  		<metal:block use-macro="context/@@ploneform-macros/widget_rendering" />
+    </tal:block>
+
+  </tal:defaults>
+
 </div>

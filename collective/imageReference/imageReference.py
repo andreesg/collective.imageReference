@@ -73,20 +73,100 @@ from plone.namedfile.field import NamedBlobImage
 # # # # # # # # # # # # # # # #
 
 class IImageReference(model.Schema):
-
-    model.fieldset('image_references', label=_(u'Image reference'), 
-        fields=['imageReference', 'productionDate', 'imageFormat', 'referenceNumber', 'creator', 'location',
-                'notes', 'reproductionType']
+    #
+    # Reproduction Data
+    #
+    model.fieldset('reproduction_data', label=_(u'Reproduction data'), 
+        fields=['reproductionData_identification_reproductionReference', 'reproductionData_identification_format',
+                'reproductionData_identification_reproductionType', 'reproductionData_identification_copies',
+                'reproductionData_identification_technique', 'reproductionData_identification_location',
+                'reproductionData_identification_date', 'reproductionData_identification_identifierURL',
+                'reproductionData_descriptiveElements_title', 'reproductionData_descriptiveElements_creator',
+                'reproductionData_descriptiveElements_subject', 'reproductionData_descriptiveElements_description',
+                'reproductionData_descriptiveElements_publisher', 'reproductionData_descriptiveElements_contributor',
+                'reproductionData_descriptiveElements_source', 'reproductionData_descriptiveElements_coverage',
+                'reproductionData_descriptiveElements_rights', 'reproductionData_descriptiveElements_notes']
     )
 
-    imageReference = schema.TextLine(title=_(u'Image reference'), required=False)
-    productionDate = schema.TextLine(title=_(u'Production date'), required=False)
-    imageFormat = schema.TextLine(title=_(u'Format'), required=False)
-    referenceNumber = schema.TextLine(title=_(u'Reference number'), required=False)
-    creator = schema.TextLine(title=_(u'Creator'), required=False)
-    location = schema.TextLine(title=_(u'Location'), required=False)
-    notes = schema.TextLine(title=_(u'Notes'), required=False)
-    reproductionType = schema.TextLine(title=_(u'Reproduction type'), required=False)
+    # identification
+    reproductionData_identification_reproductionReference = schema.TextLine(title=_(u'Reproduction reference'), required=False)
+    reproductionData_identification_format = schema.TextLine(title=_(u'Format'), required=False)
+    reproductionData_identification_reproductionType = schema.TextLine(title=_(u'Reproduction type'), required=False)
+    reproductionData_identification_copies = schema.TextLine(title=_(u'Copies'), required=False)
+    reproductionData_identification_technique = schema.TextLine(title=_(u'Technique'), required=False)
+    reproductionData_identification_location = schema.TextLine(title=_(u'Location'), required=False)
+    reproductionData_identification_date = schema.TextLine(title=_(u'Date'), required=False)
+    reproductionData_identification_identifierURL = schema.TextLine(title=_(u'Identifier (URL)'), required=False)
+
+    # Descriptive elements of the reproduction
+    reproductionData_descriptiveElements_title = schema.TextLine(title=_(u'Title'), required=False)
+    reproductionData_descriptiveElements_creator = schema.TextLine(title=_(u'Creator'), required=False)
+    reproductionData_descriptiveElements_subject = schema.TextLine(title=_(u'Subject'), required=False)
+    reproductionData_descriptiveElements_description = schema.TextLine(title=_(u'Description'), required=False)
+    reproductionData_descriptiveElements_publisher = schema.TextLine(title=_(u'Publisher'), required=False)
+    reproductionData_descriptiveElements_contributor = schema.TextLine(title=_(u'Contributor'), required=False)
+    reproductionData_descriptiveElements_source = schema.TextLine(title=_(u'Source'), required=False)
+    reproductionData_descriptiveElements_coverage = schema.TextLine(title=_(u'Coverage'), required=False)
+    reproductionData_descriptiveElements_rights = schema.TextLine(title=_(u'Rights'), required=False)
+    reproductionData_descriptiveElements_notes = schema.TextLine(title=_(u'Notes'), required=False)
+
+    #
+    # Documentation
+    #
+    model.fieldset('documentation', label=_(u'Documentation'), 
+        fields=['documentation_documentation']
+    )
+
+    documentation_documentation = ListField(title=_(u'Documentation'),
+        value_type=DictRow(title=_(u'Documentation'), schema=IDocumentationDocumentation),
+        required=False)
+    form.widget(documentation_documentation=BlockDataGridFieldFactory)
+    dexteritytextindexer.searchable('documentation_documentation')
+
+    #
+    # Linked objects
+    #
+    model.fieldset('linked_objects', label=_(u'Linked Objects'), 
+        fields=['linkedObjects_linkedObjects']
+    )
+
+    """linkedObjects_relatedItems = RelationList(
+        title=_(u'label_related_items', default=u'Related Items'),
+        default=[],
+        value_type=RelationChoice(
+            title=u"Related",
+            source=ObjPathSourceBinder()
+        ),
+        required=False
+    )"""
+
+    linkedObjects_linkedObjects = ListField(title=_(u'Linked Objects'),
+        value_type=DictRow(title=_(u'Linked Objects'), schema=ILinkedObjects),
+        required=False)
+    form.widget(linkedObjects_linkedObjects=DataGridFieldFactory)
+    dexteritytextindexer.searchable('linkedObjects_linkedObjects')
+
+    #
+    # Management details
+    #
+
+    model.fieldset('management_details', label=_(u'Management details'), 
+        fields=['managementDetails_input', 'managementDetails_edit']
+    )
+
+    managementDetails_input = ListField(title=_(u'Input'),
+        value_type=DictRow(title=_(u'Input'), schema=IManagementDetails),
+        required=False)
+    form.widget(managementDetails_input=DataGridFieldFactory)
+    dexteritytextindexer.searchable('managementDetails_input')
+
+    managementDetails_edit = ListField(title=_(u'Edit'),
+        value_type=DictRow(title=_(u'Edit'), schema=IManagementDetails),
+        required=False)
+    form.widget(managementDetails_edit=DataGridFieldFactory)
+    dexteritytextindexer.searchable('managementDetails_edit')
+
+
 
 
 alsoProvides(IImageReference, IFormFieldProvider)
@@ -102,6 +182,39 @@ class ImageReference(Item):
 
     def __init__(self, context):
         self.context = context
+
+
+class EditForm(edit.DefaultEditForm):
+    template = ViewPageTemplateFile('imageReference_templates/edit.pt')
+    
+    def update(self):
+        super(EditForm, self).update()
+        for group in self.groups:
+            for widget in group.widgets.values():
+                if widget.__name__ in ['IImageReference.linkedObjects_linkedObjects', 'IImageReference.documentation_documentation']:
+                    widget.auto_append = False
+                    widget.allow_reorder = True
+
+                if 'IImageReference' in widget.__name__:
+                    alsoProvides(widget, IFormWidget)
+
+
+class AddForm(add.DefaultAddForm):
+    template = ViewPageTemplateFile('imageReference_templates/add.pt')
+    def update(self):
+        super(AddForm, self).update()
+        for group in self.groups:
+            for widget in group.widgets.values():
+                if widget.__name__ in ['IImageReference.linkedObjects_linkedObjects', 'IImageReference.documentation_documentation']:
+                    widget.auto_append = False
+                    widget.allow_reorder = True
+
+                if 'IImageReference' in widget.__name__:
+                    alsoProvides(widget, IFormWidget)
+
+class AddView(add.DefaultAddView):
+    form = AddForm
+    
 
 
 

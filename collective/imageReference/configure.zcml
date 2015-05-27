@@ -57,6 +57,49 @@
       />
 
 
+  <!-- Custom Edit form -->
+  <browser:page
+    name="edit"
+    for="collective.imageReference.imageReference.IImageReference"
+    class="collective.imageReference.imageReference.EditForm"
+    permission="cmf.ModifyPortalContent"
+    />
+
+  <!-- Custom Add form -->
+  <adapter
+    for="Products.CMFCore.interfaces.IFolderish
+         zope.publisher.interfaces.browser.IDefaultBrowserLayer
+         plone.dexterity.interfaces.IDexterityFTI"
+    provides="zope.publisher.interfaces.browser.IBrowserPage"
+    factory=".imageReference.AddView"
+    name="Image"
+  />
+  
+  <class class=".imageReference.AddForm">
+    <require
+        permission="cmf.AddPortalContent"
+        interface="zope.publisher.interfaces.browser.IBrowserPage"
+        />
+  </class>
+
+  <!-- Custom Add and Edit form macro -->
+  <browser:page
+      for="*"
+      name="collective.imageReference.fieldsetmacro"
+      template="imageReference_templates/fieldsetmacro.pt"
+      permission="zope.Public"
+    />
+
+  <!-- Custom plone form widget -->
+  <browser:page
+    name="ploneform-render-widget"
+    for=".imageReference.IFormWidget"
+    class="plone.app.z3cform.templates.RenderWidget"
+    permission="zope.Public"
+    template="imageReference_templates/widget.pt"
+  />
+
+
   <!-- -*- extra stuff goes here -*- -->
 
 </configure>
