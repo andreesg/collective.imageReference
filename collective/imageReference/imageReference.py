@@ -146,28 +146,6 @@ class IImageReference(model.Schema):
     form.widget(linkedObjects_linkedObjects=DataGridFieldFactory)
     dexteritytextindexer.searchable('linkedObjects_linkedObjects')
 
-    #
-    # Management details
-    #
-
-    model.fieldset('management_details', label=_(u'Management details'), 
-        fields=['managementDetails_input', 'managementDetails_edit']
-    )
-
-    managementDetails_input = ListField(title=_(u'Input'),
-        value_type=DictRow(title=_(u'Input'), schema=IManagementDetails),
-        required=False)
-    form.widget(managementDetails_input=DataGridFieldFactory)
-    dexteritytextindexer.searchable('managementDetails_input')
-
-    managementDetails_edit = ListField(title=_(u'Edit'),
-        value_type=DictRow(title=_(u'Edit'), schema=IManagementDetails),
-        required=False)
-    form.widget(managementDetails_edit=DataGridFieldFactory)
-    dexteritytextindexer.searchable('managementDetails_edit')
-
-
-
 
 alsoProvides(IImageReference, IFormFieldProvider)
 

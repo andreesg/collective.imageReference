@@ -65,22 +65,6 @@
     </div>
   </tal:linked_objects>
 
-  <tal:management_details tal:condition='python: fieldset_text == "management_details"'
-    tal:define='widgets group/widgets'>
-    <!-- Linked Objects -->
-    <div class="row no-padding">
-        <h2 class="page-header" i18n:translate="">Input</h2>
-        <div class="form-horizontal gridfield table-responsive">
-          <tal:widget tal:replace="structure widgets/IImageReference.managementDetails_input/@@ploneform-render-widget"/>
-        </div>
-
-        <h2 class="page-header" i18n:translate="">Edit</h2>
-        <div class="form-horizontal gridfield table-responsive">
-          <tal:widget tal:replace="structure widgets/IImageReference.managementDetails_edit/@@ploneform-render-widget"/>
-        </div>
-    </div>
-  </tal:management_details>
-
   <tal:defaults tal:condition='python: fieldset_text not in ["documentation", "reproduction_data", "linked_objects", "management_details"]'>
 
   	<tal:block define="view nocall:group">
