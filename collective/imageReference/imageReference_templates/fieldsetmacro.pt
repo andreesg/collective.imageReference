@@ -3,7 +3,7 @@
 <div metal:define-macro="test">
 
 	<tal:reproduction_data tal:condition='python: fieldset_text == "reproduction_data"'
-    tal:define='widgets group/widgets'>
+    tal:define='widgets group/widgets' i18n:domain="collective.imageReference">
     	<div class="row no-padding">
     		<h2 class="page-header" i18n:translate="">Identification</h2>
 

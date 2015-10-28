@@ -43,7 +43,7 @@ from plone.app.widgets.dx import DatetimeFieldWidget, RelatedItemsFieldWidget
 #
 # DataGridFields dependencies
 #
-from collective.z3cform.datagridfield import DataGridFieldFactory, DictRow
+from collective.z3cform.datagridfield import DataGridFieldFactory, DictRow, IDataGridField
 from collective.z3cform.datagridfield.blockdatagridfield import BlockDataGridFieldFactory
 
 # # # # # # # # # # # # # # # 
@@ -269,13 +269,18 @@ class EditForm(edit.DefaultEditForm):
     def update(self):
         super(EditForm, self).update()
         for group in self.groups:
-            for widget in group.widgets.values():
-                if widget.__name__ in ['IImageReference.linkedObjects_linkedObjects', 'IImageReference.documentation_documentation']:
-                    widget.auto_append = False
-                    widget.allow_reorder = True
-
-                if 'IImageReference' in widget.__name__:
+            if group.__name__ not in ['settings', 'categorization', 'ownership', 'dates']:
+                for widget in group.widgets.values():
+                    if IDataGridField.providedBy(widget):
+                        widget.auto_append = False
+                        widget.allow_reorder = True
                     alsoProvides(widget, IFormWidget)
+
+        for widget in self.widgets.values():
+            if IDataGridField.providedBy(widget):
+                widget.auto_append = False
+                widget.allow_reorder = True
+                alsoProvides(widget, IFormWidget)
 
 
 class AddForm(add.DefaultAddForm):
@@ -283,12 +288,11 @@ class AddForm(add.DefaultAddForm):
     def update(self):
         super(AddForm, self).update()
         for group in self.groups:
-            for widget in group.widgets.values():
-                if widget.__name__ in ['IImageReference.linkedObjects_linkedObjects', 'IImageReference.documentation_documentation']:
-                    widget.auto_append = False
-                    widget.allow_reorder = True
-
-                if 'IImageReference' in widget.__name__:
+            if group.__name__ not in ['settings', 'categorization', 'ownership', 'dates']:
+                for widget in group.widgets.values():
+                    if IDataGridField.providedBy(widget):
+                        widget.auto_append = False
+                        widget.allow_reorder = True
                     alsoProvides(widget, IFormWidget)
 
 class AddView(add.DefaultAddView):

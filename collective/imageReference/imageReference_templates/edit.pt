@@ -116,7 +116,7 @@
                                             fieldset_text python:normalizeString(fieldset_name);
                                             fieldset_name python:normalizeString(fieldset_name);">
 
-                            <tal:restriction tal:condition="python: fieldset_text not in ['settings', 'categorization', 'ownership', 'dates']">
+                            <tal:restriction tal:condition="python: fieldset_text not in []">
                             
                               <fieldset
                                 tal:attributes="id string:fieldset-${fieldset_name};
