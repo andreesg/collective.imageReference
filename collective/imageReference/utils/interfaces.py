@@ -7,6 +7,14 @@ from collective.imageReference import MessageFactory as _
 from ..utils.vocabularies import _createPriorityVocabulary, _createInsuranceTypeVocabulary
 from zope.schema.vocabulary import SimpleTerm, SimpleVocabulary
 
+from collective.object.utils.widgets import SimpleRelatedItemsFieldWidget
+from collective.object.utils.source import ObjPathSourceBinder
+
+from z3c.relationfield.schema import RelationChoice
+from z3c.relationfield.schema import RelationList
+
+from plone.directives import dexterity, form
+
 #priority_vocabulary = SimpleVocabulary(list(_createPriorityVocabulary()))
 #insurance_type_vocabulary = SimpleVocabulary(list(_createInsuranceTypeVocabulary()))
 
@@ -30,11 +38,21 @@ class IFormWidget(Interface):
 ## Documentation
 class IDocumentationDocumentation(Interface):
     article = schema.TextLine(title=_(u'Article'), required=False)
-    title = schema.TextLine(title=_(u'Title'), required=False)
-    author = schema.TextLine(title=_(u'Author'), required=False)
+    title = RelationList(
+        title=_(u'Title'),
+        default=[],
+        value_type=RelationChoice(
+            title=u"Related",
+            source=ObjPathSourceBinder()
+        ),
+        required=False
+    )
+    form.widget('title', SimpleRelatedItemsFieldWidget, vocabulary='collective.object.relateditems')
+
+    #author = schema.TextLine(title=_(u'Author'), required=False)
     pageMark = schema.TextLine(title=_(u'Page mark'), required=False)
-    shelfMark = schema.TextLine(title=_(u'Shelf mark'), required=False)
-    notes = schema.TextLine(title=_(u'Notes'), required=False)
+    #shelfMark = schema.TextLine(title=_(u'Shelf mark'), required=False)
+    notes = schema.Text(title=_(u'Notes'), required=False)
     
 ## Management details
 class IManagementDetails(Interface):
@@ -51,4 +69,18 @@ class ILinkedObjects(Interface):
     objectName = schema.TextLine(title=_(u'Object name'), required=False)
     title = schema.TextLine(title=_(u'Title'), required=False)
 
+class ITitle(Interface):
+    title = schema.TextLine(title=_(u'Title'), required=False)
+
+class IDescription(Interface):
+    description = schema.TextLine(title=_(u'Description'), required=False)
+
+class ISource(Interface):
+    source = schema.TextLine(title=_(u'Source'), required=False)
+
+class IRights(Interface):
+    rights = schema.TextLine(title=_(u'Rights'), required=False)
+
+class INotes(Interface):
+    notes = schema.Text(title=_(u'Notes'), required=False)
 

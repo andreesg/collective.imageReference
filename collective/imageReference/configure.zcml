@@ -50,7 +50,7 @@
       name="image_reference_view"
       for="plone.app.contenttypes.interfaces.IImage"
       template="imageReference_templates/image.pt"
-      layer="plone.app.contenttypes.interfaces.IPloneAppContenttypesLayer"
+      class=".utils.views.ImageReferenceView"
       permission="zope2.View"
       menu="plone_displayviews"
       title="View Image "
@@ -101,5 +101,40 @@
 
 
   <!-- -*- extra stuff goes here -*- -->
+  <adapter name="reproductionData_identification_reproductionType" factory=".utils.indexers.reproductionData_identification_reproductionType" />
+  
+  <utility
+    component=".utils.vocabularies.ReproductionTypeFactory"
+    name="collective.imageReference.reproductionType"
+    />
+
+  <adapter name="reproductionData_identification_technique" factory=".utils.indexers.reproductionData_identification_technique" />
+  
+  <utility
+    component=".utils.vocabularies.TechniqueFactory"
+    name="collective.imageReference.technique"
+    />
+
+  <adapter name="reproductionData_identification_location" factory=".utils.indexers.reproductionData_identification_location" />
+  
+  <utility
+    component=".utils.vocabularies.LocationFactory"
+    name="collective.imageReference.location"
+    />
+
+  <adapter name="reproductionData_descriptiveElements_subject" factory=".utils.indexers.reproductionData_descriptiveElements_subject" />
+  
+  <utility
+    component=".utils.vocabularies.SubjectFactory"
+    name="collective.imageReference.subject"
+    />
+
+  <adapter name="reproductionData_descriptiveElements_coverage" factory=".utils.indexers.reproductionData_descriptiveElements_coverage" />
+  
+  <utility
+    component=".utils.vocabularies.CoverageFactory"
+    name="collective.imageReference.coverage"
+    />
+
 
 </configure>

@@ -106,40 +106,48 @@
                               </metal:define>
                           </fieldset>
 
-                          <tal:block tal:repeat="group groups" condition="has_groups">
-                            <fieldset
-                                tal:define="normalizeString nocall:context/@@plone/normalizeString;
+                          <tal:block tal:repeat="group groups" condition="has_groups"
+                            >
+
+                            <tal:definitions
+                              tal:define="normalizeString nocall:context/@@plone/normalizeString;
                                             fieldset_label group/label;
                                             fieldset_name group/__name__|group/label/default|fieldset_label;
                                             fieldset_text python:normalizeString(fieldset_name);
-                                            fieldset_name python:normalizeString(fieldset_name);"
+                                            fieldset_name python:normalizeString(fieldset_name);">
+
+                            <tal:restriction tal:condition="python: fieldset_text not in ['settings', 'categorization', 'ownership', 'dates']">
+                            
+                              <fieldset
                                 tal:attributes="id string:fieldset-${fieldset_name};
                                                 class string:kssattr-fieldset-${fieldset_name};
                                                 data-fieldset fieldset_name">
+
+                                      <legend tal:condition="fieldset_label"
+                                              tal:attributes="id string:fieldsetlegend-${fieldset_name}"
+                                              tal:content="fieldset_label">Form name</legend>
+
+                                      <p i18n:translate=""
+                                         tal:define="group_description group/description|nothing"
+                                         tal:condition="group_description"
+                                         tal:content="structure group_description">
+                                          Description
+                                      </p>
+
+                                      <tal:block tal:define="errors group/widgets/errors"
+                                                 tal:condition="errors"
+                                                 tal:repeat="error errors">
+                                          <div class="field error"
+                                              tal:condition="not:nocall:error/widget"
+                                              tal:content="structure error/render"
+                                              />
+                                      </tal:block>
                                     
-                                    <legend tal:condition="fieldset_label"
-                                            tal:attributes="id string:fieldsetlegend-${fieldset_name}"
-                                            tal:content="fieldset_label">Form name</legend>
-
-                                    <p i18n:translate=""
-                                       tal:define="group_description group/description|nothing"
-                                       tal:condition="group_description"
-                                       tal:content="structure group_description">
-                                        Description
-                                    </p>
-
-                                    <tal:block tal:define="errors group/widgets/errors"
-                                               tal:condition="errors"
-                                               tal:repeat="error errors">
-                                        <div class="field error"
-                                            tal:condition="not:nocall:error/widget"
-                                            tal:content="structure error/render"
-                                            />
-                                    </tal:block>
+                                      <tal metal:use-macro="view/context/@@collective.imageReference.fieldsetmacro/test" />
                                     
-                                    <tal metal:use-macro="view/context/@@collective.imageReference.fieldsetmacro/test" />
-
                                   </fieldset>
+                                  </tal:restriction>
+                                  </tal:definitions>
                                 </tal:block>
 
                           

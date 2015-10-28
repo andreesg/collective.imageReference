@@ -3,6 +3,8 @@
 
 from zope.schema.vocabulary import SimpleTerm, SimpleVocabulary
 from collective.imageReference import MessageFactory as _
+from collective.object.utils.vocabularies import ATVMVocabulary, ObjectVocabulary
+
 # # # # # # # # # # # # # #
 # Vocabularies            #
 # # # # # # # # # # # # # #
@@ -31,3 +33,11 @@ def _createPriorityVocabulary():
 
 priority_vocabulary = SimpleVocabulary(list(_createPriorityVocabulary()))
 insurance_type_vocabulary = SimpleVocabulary(list(_createInsuranceTypeVocabulary()))
+
+
+ReproductionTypeFactory = ObjectVocabulary('reproductionData_identification_reproductionType')
+TechniqueFactory = ObjectVocabulary('reproductionData_identification_technique')
+LocationFactory = ObjectVocabulary('reproductionData_identification_location')
+SubjectFactory = ObjectVocabulary('reproductionData_descriptiveElements_subject')
+CoverageFactory = ObjectVocabulary('reproductionData_descriptiveElements_coverage')
+

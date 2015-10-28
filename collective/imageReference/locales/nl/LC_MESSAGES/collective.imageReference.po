@@ -775,7 +775,7 @@ msgstr "Soort onderwerp"
 
 #: ../imageReference.py
 msgid "Subject"
-msgstr "Naam"
+msgstr "Onderwerp"
 
 #: ../imageReference.py
 msgid "Taxonomic rank"
@@ -1240,17 +1240,39 @@ msgid "Image reference"
 msgstr "Beelddocumentatie"
 
 
+#: ../imageReference.py
+msgid "Publisher"
+msgstr "Uitgever"
+
+#: ../imageReference.py
+msgid "Contributor"
+msgstr "Contribuant"
+
+#: ../imageReference.py
+msgid "Rights"
+msgstr "Rechten"
+
+#: ../imageReference.py
+msgid "Descriptive elements of the reproduction"
+msgstr "Beschrijvende gegevens van de reproductie"
 
 
+#: ../imageReference.py
+msgid "Reproduction reference"
+msgstr "Reproductie referentie"
 
 
+#: ../imageReference.py
+msgid "Reproduction type"
+msgstr "Soort reproductie"
 
+#: ../imageReference.py
+msgid "Copies"
+msgstr "Aantal"
 
-
-
-
-
-
+#: ../imageReference.py
+msgid "Reproduction data"
+msgstr "Reproductiegegevens"
 
 
 

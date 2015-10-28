@@ -63,6 +63,8 @@ from .utils.vocabularies import *
 from .utils.interfaces import *
 from .utils.views import *
 
+
+from collective.object.utils.widgets import AjaxSingleSelectFieldWidget, ExtendedRelatedItemsFieldWidget
 from plone.app.contenttypes.interfaces import IImage
 from plone.namedfile.field import NamedBlobImage
 
@@ -73,6 +75,9 @@ from plone.namedfile.field import NamedBlobImage
 # # # # # # # # # # # # # # # #
 
 class IImageReference(model.Schema):
+
+    priref = schema.TextLine(title=_(u'priref'), required=False)
+
     #
     # Reproduction Data
     #
@@ -91,24 +96,124 @@ class IImageReference(model.Schema):
     # identification
     reproductionData_identification_reproductionReference = schema.TextLine(title=_(u'Reproduction reference'), required=False)
     reproductionData_identification_format = schema.TextLine(title=_(u'Format'), required=False)
-    reproductionData_identification_reproductionType = schema.TextLine(title=_(u'Reproduction type'), required=False)
+
+    reproductionData_identification_reproductionType = schema.List(
+        title=_(u'Reproduction type'),
+        required=False,
+        value_type=schema.TextLine(),
+        missing_value=[],
+        default=[]
+    )
+    form.widget('reproductionData_identification_reproductionType', AjaxSingleSelectFieldWidget, vocabulary="collective.imageReference.reproductionType")
+
+
     reproductionData_identification_copies = schema.TextLine(title=_(u'Copies'), required=False)
-    reproductionData_identification_technique = schema.TextLine(title=_(u'Technique'), required=False)
-    reproductionData_identification_location = schema.TextLine(title=_(u'Location'), required=False)
+
+    reproductionData_identification_technique = schema.List(
+        title=_(u'Technique'),
+        required=False,
+        value_type=schema.TextLine(),
+        missing_value=[],
+        default=[]
+    )
+    form.widget('reproductionData_identification_technique', AjaxSingleSelectFieldWidget, vocabulary="collective.imageReference.technique")
+
+    reproductionData_identification_location = schema.List(
+        title=_(u'Location'),
+        required=False,
+        value_type=schema.TextLine(),
+        missing_value=[],
+        default=[]
+    )
+    form.widget('reproductionData_identification_location', AjaxSingleSelectFieldWidget, vocabulary="collective.imageReference.location")
+
     reproductionData_identification_date = schema.TextLine(title=_(u'Date'), required=False)
     reproductionData_identification_identifierURL = schema.TextLine(title=_(u'Identifier (URL)'), required=False)
 
     # Descriptive elements of the reproduction
-    reproductionData_descriptiveElements_title = schema.TextLine(title=_(u'Title'), required=False)
-    reproductionData_descriptiveElements_creator = schema.TextLine(title=_(u'Creator'), required=False)
-    reproductionData_descriptiveElements_subject = schema.TextLine(title=_(u'Subject'), required=False)
-    reproductionData_descriptiveElements_description = schema.TextLine(title=_(u'Description'), required=False)
-    reproductionData_descriptiveElements_publisher = schema.TextLine(title=_(u'Publisher'), required=False)
-    reproductionData_descriptiveElements_contributor = schema.TextLine(title=_(u'Contributor'), required=False)
-    reproductionData_descriptiveElements_source = schema.TextLine(title=_(u'Source'), required=False)
-    reproductionData_descriptiveElements_coverage = schema.TextLine(title=_(u'Coverage'), required=False)
-    reproductionData_descriptiveElements_rights = schema.TextLine(title=_(u'Rights'), required=False)
-    reproductionData_descriptiveElements_notes = schema.TextLine(title=_(u'Notes'), required=False)
+    reproductionData_descriptiveElements_title = ListField(title=_(u'Title'),
+        value_type=DictRow(title=_(u'title'), schema=ITitle),
+        required=False)
+    form.widget(reproductionData_descriptiveElements_title=BlockDataGridFieldFactory)
+    dexteritytextindexer.searchable('reproductionData_descriptiveElements_title')
+    
+    reproductionData_descriptiveElements_creator = RelationList(
+        title=_(u'Creator'),
+        default=[],
+        value_type=RelationChoice(
+            title=u"Related",
+            source=ObjPathSourceBinder(portal_type='PersonOrInstitution')
+        ),
+        required=False
+    )
+
+    form.widget('reproductionData_descriptiveElements_creator', ExtendedRelatedItemsFieldWidget, vocabulary='collective.object.relateditems')
+    
+    reproductionData_descriptiveElements_subject = schema.List(
+        title=_(u'Subject'),
+        required=False,
+        value_type=schema.TextLine(),
+        missing_value=[],
+        default=[]
+    )
+    form.widget('reproductionData_descriptiveElements_subject', AjaxSelectFieldWidget, vocabulary="collective.imageReference.subject")
+
+    reproductionData_descriptiveElements_description = ListField(title=_(u'Description'),
+        value_type=DictRow(title=_(u'Description'), schema=IDescription),
+        required=False)
+    form.widget(reproductionData_descriptiveElements_description=BlockDataGridFieldFactory)
+    dexteritytextindexer.searchable('reproductionData_descriptiveElements_description')
+
+    reproductionData_descriptiveElements_publisher = RelationList(
+        title=_(u'Publisher'),
+        default=[],
+        value_type=RelationChoice(
+            title=u"Related",
+            source=ObjPathSourceBinder(portal_type='PersonOrInstitution')
+        ),
+        required=False
+    )
+
+    form.widget('reproductionData_descriptiveElements_publisher', ExtendedRelatedItemsFieldWidget, vocabulary='collective.object.relateditems')
+
+    reproductionData_descriptiveElements_contributor = RelationList(
+        title=_(u'Contributor'),
+        default=[],
+        value_type=RelationChoice(
+            title=u"Related",
+            source=ObjPathSourceBinder(portal_type='PersonOrInstitution')
+        ),
+        required=False
+    )
+
+    form.widget('reproductionData_descriptiveElements_contributor', ExtendedRelatedItemsFieldWidget, vocabulary='collective.object.relateditems')
+
+    reproductionData_descriptiveElements_source = ListField(title=_(u'Source'),
+        value_type=DictRow(title=_(u'Source'), schema=ISource),
+        required=False)
+    form.widget(reproductionData_descriptiveElements_source=BlockDataGridFieldFactory)
+    dexteritytextindexer.searchable('reproductionData_descriptiveElements_source')
+
+    reproductionData_descriptiveElements_coverage = schema.List(
+        title=_(u'Coverage'),
+        required=False,
+        value_type=schema.TextLine(),
+        missing_value=[],
+        default=[]
+    )
+    form.widget('reproductionData_descriptiveElements_coverage', AjaxSelectFieldWidget, vocabulary="collective.imageReference.coverage")
+
+    reproductionData_descriptiveElements_rights = ListField(title=_(u'Rights'),
+        value_type=DictRow(title=_(u'Rights'), schema=IRights),
+        required=False)
+    form.widget(reproductionData_descriptiveElements_rights=BlockDataGridFieldFactory)
+    dexteritytextindexer.searchable('reproductionData_descriptiveElements_rights')
+
+    reproductionData_descriptiveElements_notes = ListField(title=_(u'Notes'),
+        value_type=DictRow(title=_(u'Notes'), schema=INotes),
+        required=False)
+    form.widget(reproductionData_descriptiveElements_notes=BlockDataGridFieldFactory)
+    dexteritytextindexer.searchable('reproductionData_descriptiveElements_notes')
 
     #
     # Documentation
@@ -127,24 +232,20 @@ class IImageReference(model.Schema):
     # Linked objects
     #
     model.fieldset('linked_objects', label=_(u'Linked Objects'), 
-        fields=['linkedObjects_linkedObjects']
+        fields=['linkedObjects_linkedobjects']
     )
 
-    """linkedObjects_relatedItems = RelationList(
-        title=_(u'label_related_items', default=u'Related Items'),
+    linkedObjects_linkedobjects = RelationList(
+        title=_(u'Object number'),
         default=[],
         value_type=RelationChoice(
             title=u"Related",
-            source=ObjPathSourceBinder()
+            source=ObjPathSourceBinder(portal_type='Object')
         ),
         required=False
-    )"""
+    )
 
-    linkedObjects_linkedObjects = ListField(title=_(u'Linked Objects'),
-        value_type=DictRow(title=_(u'Linked Objects'), schema=ILinkedObjects),
-        required=False)
-    form.widget(linkedObjects_linkedObjects=DataGridFieldFactory)
-    dexteritytextindexer.searchable('linkedObjects_linkedObjects')
+    form.widget('linkedObjects_linkedobjects', ExtendedRelatedItemsFieldWidget, vocabulary='collective.object.relateditems')
 
 
 alsoProvides(IImageReference, IFormFieldProvider)

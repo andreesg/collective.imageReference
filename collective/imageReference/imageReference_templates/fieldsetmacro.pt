@@ -20,16 +20,38 @@
 			
 			<h2 class="page-header" i18n:translate="">Descriptive elements of the reproduction</h2>
 
-			<div class="form-horizontal">
+			<div class="form-horizontal gridfield">
+
     			<tal:widget tal:replace="structure widgets/IImageReference.reproductionData_descriptiveElements_title/@@ploneform-render-widget"/>
+
+            </div>
+
+            <div class="form-horizontal">
     			<tal:widget tal:replace="structure widgets/IImageReference.reproductionData_descriptiveElements_creator/@@ploneform-render-widget"/>
     			<tal:widget tal:replace="structure widgets/IImageReference.reproductionData_descriptiveElements_subject/@@ploneform-render-widget"/>
+            </div>
+
+            <div class="form-horizontal gridfield">
     			<tal:widget tal:replace="structure widgets/IImageReference.reproductionData_descriptiveElements_description/@@ploneform-render-widget"/>
+            </div>
+
+            <div class="form-horizontal">
     			<tal:widget tal:replace="structure widgets/IImageReference.reproductionData_descriptiveElements_publisher/@@ploneform-render-widget"/>
     			<tal:widget tal:replace="structure widgets/IImageReference.reproductionData_descriptiveElements_contributor/@@ploneform-render-widget"/>
+            </div>
+
+            <div class="form-horizontal gridfield">
     			<tal:widget tal:replace="structure widgets/IImageReference.reproductionData_descriptiveElements_source/@@ploneform-render-widget"/>
+            </div>
+
+            <div class="form-horizontal">
     			<tal:widget tal:replace="structure widgets/IImageReference.reproductionData_descriptiveElements_coverage/@@ploneform-render-widget"/>
+            </div>
+
+            <div class="form-horizontal gridfield">
     			<tal:widget tal:replace="structure widgets/IImageReference.reproductionData_descriptiveElements_rights/@@ploneform-render-widget"/>
+            </div>
+            <div class="form-horizontal gridfield">
     			<tal:widget tal:replace="structure widgets/IImageReference.reproductionData_descriptiveElements_notes/@@ploneform-render-widget"/>
     		</div>
 
@@ -54,14 +76,9 @@
     <!-- Linked Objects -->
     <div class="row no-padding">
         <h2 class="page-header" i18n:translate="">Linked Objects</h2>
-        <div class="form-horizontal gridfield table-responsive">
-          <tal:widget tal:replace="structure widgets/IImageReference.linkedObjects_linkedObjects/@@ploneform-render-widget"/>
+        <div class="form-horizontal">
+          <tal:widget tal:replace="structure widgets/IImageReference.linkedObjects_linkedobjects/@@ploneform-render-widget"/>
         </div>
-
-        <!--<h2 class="page-header" i18n:translate="">Linked Objects</h2>
-        <div class="form-horizontal gridfield table-responsive">
-          <tal:widget tal:replace="structure widgets/linkedObjects_linkedObjects/@@ploneform-render-widget"/>
-        </div>-->
     </div>
   </tal:linked_objects>
 

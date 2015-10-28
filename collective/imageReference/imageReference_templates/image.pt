@@ -7,35 +7,107 @@
       i18n:domain="plone">
 
 <body>
+    <metal:title fill-slot="content-title">
+      <metal:block define-macro="content-title">
+        
+        <img id="edit-header-wrapper" tal:define="lead_url python: context.absolute_url()" tal:attributes="src python: lead_url" style="height:100%; width: auto; display: block; margin: 0 auto;"/>
+        
+        
+        <h1 metal:use-macro="context/kss_generic_macros/macros/generic_title_view">
+           Generic KSS Title. Is rendered with class="documentFirstHeading".
+        </h1>
+      </metal:block>
+    </metal:title>
+
+    <metal:description fill-slot="content-description">
+      <metal:block define-macro="content-description">
+        
+        <tal:hasimage tal:condition="python: context.image != None">
+        <tal:image tal:define="size context/image/getSize">
+          <a class="discreet"
+             tal:attributes="href string:${context/@@plone_context_state/object_url}/image_view_fullscreen"
+              tal:on-error="string: Image cannot be displayed">
+              <span class="visualNoPrint">
+                  <img src="" alt="" tal:replace="structure context/search_icon.png" />
+                  <span i18n:translate="label_click_to_view_full_image">Click to view full-size image&hellip;</span>
+              </span>
+          </a>
+
+          <span class="discreet visualNoPrint">
+          &mdash;
+              <span i18n:translate="label_size">Size</span>:
+              <span tal:replace="python:size/1024">
+                  File size
+              </span>KB
+          </span>
+        </tal:image>
+        </tal:hasimage>
+      </metal:block>
+    </metal:description>
 
     <metal:content-core fill-slot="content-core">
-        <tal:hasimage tal:condition="python: context.image != None">
-          <metal:block define-macro="content-core"
-                       tal:define="size context/image/getSize">
 
-              <a class="discreet"
-                 tal:attributes="href string:${context/@@plone_context_state/object_url}/image_view_fullscreen"
-                 tal:define="scale context/@@images;
-                             img_tag python:scale.scale('image', scale='preview').tag()"
-                  tal:on-error="string: Image cannot be displayed">
-                  <img tal:replace="structure img_tag" />
-                  <br />
-                  <span class="visualNoPrint">
-                      <img src="" alt="" tal:replace="structure context/search_icon.png" />
-                      <span i18n:translate="label_click_to_view_full_image">Click to view full-size image&hellip;</span>
-                  </span>
-              </a>
+      <tal:permissions
+      tal:define="user_admin view/checkUserPermission;
+                  fieldset_restriction python:request.get('fieldset', None);"
+      >
+      
+      <tal:admin tal:condition="user_admin">
+        <div class="template-edit">
+          <div id="content-core">
 
-              <span class="discreet visualNoPrint">
-              &mdash;
-                  <span i18n:translate="label_size">Size</span>:
-                  <span tal:replace="python:size/1024">
-                      File size
-                  </span>KB
-              </span>
-          </metal:block>
-      </tal:hasimage>
+
+            <form class="enableFormTabbing">
+
+              <tal:block tal:repeat="group view/groups">
+              
+                <tal:definitions tal:define="normalizeString nocall:context/@@plone/normalizeString;
+                            fieldset_label group/label;
+                            fieldset_name group/__name__|group/label/default|fieldset_label;
+                            fieldset_text python:normalizeString(fieldset_name);
+                            fieldset_name python:normalizeString(fieldset_name);">
+                
+                <tal:restrictions tal:condition="python: fieldset_text not in ['settings', 'categorization', 'ownership', 'dates']">
+                    <fieldset
+
+                        tal:attributes="id string:fieldset-${fieldset_name};
+                                      class string:formPanel;">
+                          
+                            <legend tal:condition="fieldset_label"
+                                    tal:attributes="id string:fieldset-${fieldset_name}"
+                                    tal:content="fieldset_label">Form name</legend>
+
+                            <p i18n:translate=""
+                               tal:define="group_description group/description|nothing"
+                               tal:condition="group_description"
+                               tal:content="structure group_description">
+                                Description
+                            </p>
+
+                            <tal:block tal:define="errors group/widgets/errors"
+                                       tal:condition="errors"
+                                       tal:repeat="error errors">
+                                <div class="field error"
+                                    tal:condition="not:nocall:error/widget"
+                                    tal:content="structure error/render"
+                                    />
+                            </tal:block>
+
+                            <tal:restriction tal:condition="python: fieldset_name == 'reproduction_data'">
+                              <tal metal:use-macro="view/context/@@collective.imageReference.fieldsetmacro/test" />
+                            </tal:restriction>
+                    </fieldset>
+                </tal:restrictions>
+              </tal:definitions>
+            </tal:block>
+
+            </form>
+          </div>
+        </div>
+      </tal:admin>
+    </tal:permissions>
     </metal:content-core>
+        
 </body>
 
 </html>
