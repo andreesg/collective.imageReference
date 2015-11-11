@@ -10,9 +10,7 @@
     <metal:title fill-slot="content-title">
       <metal:block define-macro="content-title">
         
-        <img id="edit-header-wrapper" tal:define="lead_url python: context.absolute_url()" tal:attributes="src python: lead_url" style="height:100%; width: auto; display: block; margin: 0 auto;"/>
-        
-        
+        <img id="edit-header-wrapper" tal:define="lead_url python: context.absolute_url()" tal:attributes="src python: lead_url" style="height:100%; width: auto; display: block; margin: 0 auto;" tal:condition="python: getattr(context, 'image', None) != None"/>
         <h1 metal:use-macro="context/kss_generic_macros/macros/generic_title_view">
            Generic KSS Title. Is rendered with class="documentFirstHeading".
         </h1>
