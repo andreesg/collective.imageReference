@@ -38,7 +38,7 @@ from .utils.source import ObjPathSourceBinder
 #
 # plone.app.widgets dependencies
 #
-from plone.app.widgets.dx import DatetimeFieldWidget, RelatedItemsFieldWidget
+from plone.app.z3cform.widget import DatetimeFieldWidget, RelatedItemsFieldWidget
 
 #
 # DataGridFields dependencies
@@ -142,7 +142,7 @@ class IImageReference(model.Schema):
         default=[],
         value_type=RelationChoice(
             title=u"Related",
-            source=ObjPathSourceBinder(portal_type='PersonOrInstitution')
+            vocabulary='collective.object.relateditems'
         ),
         required=False
     )
@@ -169,7 +169,7 @@ class IImageReference(model.Schema):
         default=[],
         value_type=RelationChoice(
             title=u"Related",
-            source=ObjPathSourceBinder(portal_type='PersonOrInstitution')
+            vocabulary='collective.object.relateditems'
         ),
         required=False
     )
@@ -181,7 +181,7 @@ class IImageReference(model.Schema):
         default=[],
         value_type=RelationChoice(
             title=u"Related",
-            source=ObjPathSourceBinder(portal_type='PersonOrInstitution')
+            vocabulary='collective.object.relateditems'
         ),
         required=False
     )
@@ -240,7 +240,7 @@ class IImageReference(model.Schema):
         default=[],
         value_type=RelationChoice(
             title=u"Related",
-            source=ObjPathSourceBinder(portal_type='Object')
+            vocabulary='collective.object.relateditems'
         ),
         required=False
     )

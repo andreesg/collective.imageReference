@@ -51,58 +51,55 @@
       >
       
       <tal:admin tal:condition="user_admin">
-        <div class="template-edit">
-          <div id="content-core">
+    <div class="template-edit">
+      <div id="content-core">
 
+        <div id="ajax-error-msg" class="alert alert-warning" role="alert"></div>
+    
+        <form data-pat-autotoc="levels: legend; section: fieldset; className: autotabs" class="rowlike enableUnloadProtection enableFormTabbing pat-autotoc autotabs;" id="form">
 
-            <form class="enableFormTabbing">
+        <tal:block tal:repeat="group view/groups">
+       
+        <fieldset
+          tal:define="normalizeString nocall:context/@@plone/normalizeString;
+                      fieldset_label group/label;
+                      fieldset_name group/__name__|group/label/default|fieldset_label;
+                      fieldset_text python:normalizeString(fieldset_name);
+                      fieldset_name python:normalizeString(fieldset_name);"
 
-              <tal:block tal:repeat="group view/groups">
+            tal:attributes="id string:fieldset-${fieldset_name};
+                          class string:formPanel;">
               
-                <tal:definitions tal:define="normalizeString nocall:context/@@plone/normalizeString;
-                            fieldset_label group/label;
-                            fieldset_name group/__name__|group/label/default|fieldset_label;
-                            fieldset_text python:normalizeString(fieldset_name);
-                            fieldset_name python:normalizeString(fieldset_name);">
-                
-                <tal:restrictions tal:condition="python: fieldset_text not in ['settings', 'categorization', 'ownership', 'dates']">
-                    <fieldset
+                <legend tal:condition="fieldset_label"
+                        tal:attributes="id string:fieldset-${fieldset_name}"
+                        tal:content="fieldset_label">Form name</legend>
 
-                        tal:attributes="id string:fieldset-${fieldset_name};
-                                      class string:formPanel;">
-                          
-                            <legend tal:condition="fieldset_label"
-                                    tal:attributes="id string:fieldset-${fieldset_name}"
-                                    tal:content="fieldset_label">Form name</legend>
+                <p i18n:translate=""
+                   tal:define="group_description group/description|nothing"
+                   tal:condition="group_description"
+                   tal:content="structure group_description">
+                    Description
+                </p>
 
-                            <p i18n:translate=""
-                               tal:define="group_description group/description|nothing"
-                               tal:condition="group_description"
-                               tal:content="structure group_description">
-                                Description
-                            </p>
+                <tal:block tal:define="errors group/widgets/errors"
+                           tal:condition="errors"
+                           tal:repeat="error errors">
+                    <div class="field error"
+                        tal:condition="not:nocall:error/widget"
+                        tal:content="structure error/render"
+                    />
+                </tal:block>
+                <tal:block define="view nocall:group">
+                    <metal:block use-macro="context/@@ploneform-macros/widget_rendering" />
+                </tal:block> 
+        </fieldset>
+      
+      </tal:block>
 
-                            <tal:block tal:define="errors group/widgets/errors"
-                                       tal:condition="errors"
-                                       tal:repeat="error errors">
-                                <div class="field error"
-                                    tal:condition="not:nocall:error/widget"
-                                    tal:content="structure error/render"
-                                    />
-                            </tal:block>
-
-                            <tal:restriction tal:condition="python: fieldset_name == 'reproduction_data'">
-                              <tal metal:use-macro="view/context/@@collective.imageReference.fieldsetmacro/test" />
-                            </tal:restriction>
-                    </fieldset>
-                </tal:restrictions>
-              </tal:definitions>
-            </tal:block>
-
-            </form>
-          </div>
-        </div>
-      </tal:admin>
+        </form>
+      </div>
+    </div>
+  </tal:admin>
     </tal:permissions>
     </metal:content-core>
         

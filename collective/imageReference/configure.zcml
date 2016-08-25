@@ -91,13 +91,13 @@
     />
 
   <!-- Custom plone form widget -->
-  <browser:page
+  <!--<browser:page
     name="ploneform-render-widget"
     for=".imageReference.IFormWidget"
     class="plone.app.z3cform.templates.RenderWidget"
     permission="zope.Public"
     template="imageReference_templates/widget.pt"
-  />
+  />-->
 
 
   <!-- -*- extra stuff goes here -*- -->
@@ -136,5 +136,6 @@
     name="collective.imageReference.coverage"
     />
 
-
+  <adapter name="image_priref" factory=".utils.indexers.image_priref" />
+  
 </configure>

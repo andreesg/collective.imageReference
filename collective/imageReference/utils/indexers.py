@@ -53,6 +53,16 @@ def reproductionData_descriptiveElements_coverage(object, **kw):
     except:
         return []
 
+@indexer(IImageReference)
+def image_priref(object, **kw):
+    try:
+        if hasattr(object, 'priref'):
+            return object.priref
+        else:
+            return ""
+    except:
+        return ""
+
 
 
 

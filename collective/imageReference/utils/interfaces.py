@@ -43,7 +43,7 @@ class IDocumentationDocumentation(Interface):
         default=[],
         value_type=RelationChoice(
             title=u"Related",
-            source=ObjPathSourceBinder()
+            vocabulary='collective.object.relateditems'
         ),
         required=False
     )
